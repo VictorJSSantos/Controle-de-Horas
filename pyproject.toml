@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tasks-cli"  # Nome do pacote
+version = "0.1.0"
+description = "Meu CLI de comunicação com o Supabase para Gestão de Tarefas"
+readme = "README.md"
+authors = [{name = "Victor Santos", email = "victormvll@gmail.com"}]
+license = { text = "MIT" }
+dependencies = [
+    "typer[all]",
+    "supabase",  
+    "typer",
+    "pydantic",
+    
+]
+
+[project.scripts]
+meu-cli = "meu_cli.main:app"
