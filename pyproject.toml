@@ -18,4 +18,4 @@ dependencies = [
 ]
 
 [project.scripts]
-meu-cli = "meu_cli.main:app"
+tasks-cli = "tasks.main:app"
