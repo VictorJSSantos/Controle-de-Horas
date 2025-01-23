@@ -135,7 +135,7 @@ def criar_tarefa(
 
         # Verificando se houve erro na resposta
         if response is not None:
-            typer.echo(f"Empresa {name} criada com sucesso!")
+            typer.echo(f"Tarefa {name} criada com sucesso!")
     except Exception as e:
         typer.echo(
             f"Erro ao criar a empresa: {str(e)}"
@@ -154,15 +154,15 @@ def listar_tarefas():
 
         # Verificando se a resposta retornou dados
         if not response.data:
-            typer.echo("Nenhuma empresa encontrada.")
+            typer.echo("Nenhuma tarefa encontrada.")
             return
 
         # Exibindo as empresas
-        typer.echo("Lista de empresas:")
-        for empresa in response.data:
+        typer.echo("Lista de tarefas:")
+        for task in response.data:
             typer.echo(
-                f"ID: {empresa['id']} | Nome: {empresa['name']} | Descrição: {empresa['descricao']} | "
-                f"Horário de Início: {empresa['horario_de_inicio']} | Horário de Fim: {empresa['horario_de_finalizacao']}"
+                f"ID: {task['id']} | Nome: {task['name']} | Descrição: {task['descricao']} | "
+                f"Horário de Início: {task['horario_de_inicio']} | Horário de Fim: {task['horario_de_finalizacao']}"
             )
     except Exception as e:
         typer.echo(f"Erro ao listar empresas: {str(e)}")
